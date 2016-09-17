@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.shaynamehta.gametimeclock.MainActivity"
-    android:weightSum="1">
+    android:weightSum="0">
 
     <TimePicker
         android:layout_width="wrap_content"
@@ -17,12 +17,23 @@
         android:id="@+id/timePicker"
         android:layout_gravity="center_horizontal"/>
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
-        android:id="@+id/addbutton"
-        android:enabled="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center|bottom">
+
+    </LinearLayout>
+
+    <Button
+    style="?android:attr/buttonStyleSmall"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Save"
+    android:id="@+id/addbutton"
+    android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
 
 </LinearLayout>
