@@ -12,7 +12,7 @@ android:weightSum="1">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
+        android:text="New Alarm"
         android:id="@+id/button"
         android:layout_gravity="right|bottom" />
 </FrameLayout>
@@ -20,6 +20,9 @@ android:weightSum="1">
 <ListView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:id="@+id/listView" />
+    android:id="@+id/alarmListView"
+    />
+
+
 
 </LinearLayout>
