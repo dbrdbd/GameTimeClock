@@ -60,21 +60,29 @@ public class TicTacToeActivity extends AppCompatActivity {
                 board[x][y].setEnabled(false);
                 board[x][y].setText("O");
                 ticTacToeGame.c[x][y] = 1;
-                textView.setText("");
                 if (!ticTacToeGame.checkBoard()) {
                     ticTacToeGame.makeMove();
                     board[ticTacToeGame.move.x][ticTacToeGame.move.y].setText("X");
                     board[ticTacToeGame.move.x][ticTacToeGame.move.y].setEnabled(false);
-                }
-                else {
-                    if (ticTacToeGame.gameOutcome == 0) {
-                        textView.setText("It's a draw. Time to start the day!");
-                    } else if (ticTacToeGame.gameOutcome == 1) {
-                        textView.setText("You win. Time to start the day!");
-                    } else{
-                        textView.setText("You lose. Time to start the day!");
+                    if(ticTacToeGame.checkBoard()) {
+                        displayOutome();
+                        // end game
                     }
                 }
+                else {
+                    displayOutome();
+                    // end game
+                }
+            }
+        }
+
+        private void displayOutome() {
+            if (ticTacToeGame.gameOutcome == 0) {
+                textView.setText("It's a draw. Time to start the day!");
+            } else if (ticTacToeGame.gameOutcome == 1) {
+                textView.setText("You win. Time to start the day!");
+            } else{
+                textView.setText("You lose. Time to start the day!");
             }
         }
     }
