@@ -2,6 +2,11 @@ package com.shaynamehta.gametimeclock;
 
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.text.format.DateFormat;
@@ -29,5 +34,12 @@ public class TimePickerFragment extends DialogFragment
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         // Do something with the time chosen by the user
+        System.out.println("hi");
+        Uri ringtoneUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+        Ringtone ringtoneSound = RingtoneManager.getRingtone(getContext(), ringtoneUri);
+
+        if (ringtoneSound != null) {
+            ringtoneSound.play();
+        }
     }
 }
