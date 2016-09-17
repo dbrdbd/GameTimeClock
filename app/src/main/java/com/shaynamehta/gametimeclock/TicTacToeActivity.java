@@ -17,17 +17,17 @@ public class TicTacToeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tic_tac_toe);
+        setContentView(R.layout.activity_main);
 
         board = new Button[3][3];
         board[0][0] = (Button) findViewById(R.id.tictactoe1);
         board[1][0] = (Button) findViewById(R.id.tictactoe2);
         board[2][0] = (Button) findViewById(R.id.tictactoe3);
-        board[1][1] = (Button) findViewById(R.id.tictactoe4);
+        board[0][1] = (Button) findViewById(R.id.tictactoe4);
         board[1][1] = (Button) findViewById(R.id.tictactoe5);
-        board[1][2] = (Button) findViewById(R.id.tictactoe6);
-        board[2][0] = (Button) findViewById(R.id.tictactoe7);
-        board[2][1] = (Button) findViewById(R.id.tictactoe8);
+        board[2][1] = (Button) findViewById(R.id.tictactoe6);
+        board[0][2] = (Button) findViewById(R.id.tictactoe7);
+        board[1][2] = (Button) findViewById(R.id.tictactoe8);
         board[2][2] = (Button) findViewById(R.id.tictactoe9);
 
         textView = (TextView) findViewById(R.id.gameInfo);
@@ -63,12 +63,8 @@ public class TicTacToeActivity extends AppCompatActivity {
                 textView.setText("");
                 if (!ticTacToeGame.checkBoard()) {
                     ticTacToeGame.makeMove();
-                    if(ticTacToeGame.c[x][y] == 1) {
-                        board[x][y].setText("O");
-                    } else {
-                        board[x][y].setText("X");
-                    }
-                    board[x][y].setEnabled(false);
+                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setText("X");
+                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setEnabled(false);
                 }
                 else {
                     if (ticTacToeGame.gameOutcome == 0) {

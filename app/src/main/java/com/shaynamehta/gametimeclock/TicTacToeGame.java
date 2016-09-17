@@ -18,9 +18,18 @@ public class TicTacToeGame {
     int c[][];
     // 0 = tie 1 = you win 2 = com win
     int gameOutcome;
+    // to store AI's last move
+    Move move;
+
+    class Move {
+        int x;
+        int y;
+    }
 
     public TicTacToeGame() {
         c = new int[3][3];
+        move = new Move();
+        gameOutcome = 0;
         for(int i = 0; i < 3; ++i) {
             for(int j = 0; j < 3; ++j) {
                 c[i][j] = 0;
@@ -87,6 +96,8 @@ public class TicTacToeGame {
     private void markSquare(int a, int b) {
         c[a][b] = 2;
         checkBoard();
+        move.x = a;
+        move.y = b;
     }
 
     public boolean checkBoard() {
@@ -100,6 +111,16 @@ public class TicTacToeGame {
                 (c[0][0] == 1 && c[1][1] == 1 && c[2][2] == 1) ||
                 (c[0][2] == 1 && c[1][1] == 1 && c[2][0] == 1)) {
             gameOutcome = 1;
+            gameOver = true;
+        } else if((c[0][0] == 2 && c[1][0] == 2 && c[2][0] == 2) ||
+                (c[1][0] == 2 && c[1][1] == 2 && c[1][2] == 2) ||
+                (c[2][0] == 2 && c[2][1] == 2 && c[2][2] == 2) ||
+                (c[0][0] == 2 && c[0][1] == 2 && c[0][2] == 2) ||
+                (c[1][0] == 2 && c[1][1] == 2 && c[1][2] == 2) ||
+                (c[2][0] == 2 && c[2][1] == 2 && c[2][2] == 2) ||
+                (c[0][0] == 2 && c[1][1] == 2 && c[2][2] == 2) ||
+                (c[0][2] == 2 && c[1][1] == 2 && c[2][0] == 2)) {
+            gameOutcome = 2;
             gameOver = true;
         } else {
             boolean empty = false;
@@ -116,15 +137,6 @@ public class TicTacToeGame {
                 gameOver = true;
             }
         }
-        gameOutcome = 2;
         return gameOver;
     }
 }
-//    Button board[][];
-//    int c[][];
-//
-//    private void setBoard() {
-//        board = new Button[3][3];
-//        c = new int[3][3];
-//    }
-//}
