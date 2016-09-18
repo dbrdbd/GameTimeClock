@@ -3,6 +3,7 @@ package com.shaynamehta.gametimeclock;
 import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -39,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
         int alarmHour = timePicker1.getCurrentHour();
         int alarmMinute = timePicker1.getCurrentMinute();
-        int alarmTime = alarmHour * 3600000 + alarmMinute * 60000;
+        long alarmTime = alarmHour * 3600000 + alarmMinute * 60000;
 
         final Calendar c = Calendar.getInstance();
         int hour = c.get(Calendar.HOUR_OF_DAY);
         int minute = c.get(Calendar.MINUTE);
-        int calendarTime = hour * 3600000 + minute * 60000;
+        long calendarTime = hour * 3600000 + minute * 60000;
 
-        int timeDifference = 0;
+        long timeDifference = 0;
         if(alarmTime > calendarTime) {
             timeDifference = alarmTime - calendarTime;
         } else {
@@ -54,9 +55,13 @@ public class MainActivity extends AppCompatActivity {
             timeDifference = 86400000 - (calendarTime - alarmTime);
         }
 
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
+        Runnable runnable = new Runnable() {
+            public void run() {
+                Intent intent = new Intent(getApplicationContext(), TicTacToeActivity.class);
+                startActivity(intent);
+            }
+        };
+        /*Runnable runnable = new Runnable() {
             public void run() {
                 Uri ringtoneUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
                 Ringtone ringtoneSound = RingtoneManager.getRingtone(getApplicationContext(), ringtoneUri);
@@ -65,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
                     ringtoneSound.play();
                 }
             }
-        }, timeDifference);
+        };
+        Thread mythread = new Thread(runnable); */
+
+        Handler handler = new Handler();
+        handler.postDelayed(runnable, timeDifference);
     }
 }

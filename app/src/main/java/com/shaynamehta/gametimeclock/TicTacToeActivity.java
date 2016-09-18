@@ -1,6 +1,11 @@
 package com.shaynamehta.gametimeclock;
 
 import java.util.Random;
+
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,10 +19,28 @@ public class TicTacToeActivity extends AppCompatActivity {
     TextView textView;
     TicTacToeGame ticTacToeGame;
 
+    Handler handler = new Handler();
+    Runnable runnable = new Runnable() {
+        public void run() {
+            Uri ringtoneUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_ALARM);
+            ringtoneSound = RingtoneManager.getRingtone(getApplicationContext(), ringtoneUri);
+
+            if (ringtoneSound != null) {
+                ringtoneSound.play();
+            }
+        }
+    };
+    Thread myThread = new Thread(runnable);
+    private Ringtone ringtoneSound;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tic_tac_toe);
+
+        myThread.start();
 
         board = new Button[3][3];
         board[0][0] = (Button) findViewById(R.id.tictactoe1);
@@ -84,9 +107,10 @@ public class TicTacToeActivity extends AppCompatActivity {
             } else{
                 textView.setText("You lose. Time to start the day!");
             }
+            ringtoneSound.stop();
+            ringtoneSound = null;
         }
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
