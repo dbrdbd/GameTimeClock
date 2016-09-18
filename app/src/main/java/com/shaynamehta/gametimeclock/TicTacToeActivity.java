@@ -58,7 +58,7 @@ public class TicTacToeActivity extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.gameInfo);
         textView.setText("Click a tile to start.");
-        textView.setTextColor(Color.WHITE);
+        textView.setTextColor(Color.BLACK);
 
 
         for(int i = 0; i < 3; ++i) {
@@ -87,14 +87,14 @@ public class TicTacToeActivity extends AppCompatActivity {
             if (board[x][y].isEnabled()) {
                 board[x][y].setEnabled(false);
                 board[x][y].setText("X");
-                board[x][y].setTextColor(Color.BLUE);
-                board[x][y].setTextSize(TypedValue.COMPLEX_UNIT_PX, 60);
+                board[x][y].setTextColor(Color.WHITE);
+                board[x][y].setTextSize(TypedValue.COMPLEX_UNIT_PX, 70);
                 ticTacToeGame.c[x][y] = 1;
                 if (!ticTacToeGame.checkBoard()) {
                     ticTacToeGame.makeMove();
                     board[ticTacToeGame.move.x][ticTacToeGame.move.y].setText("O");
-                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setTextColor(Color.MAGENTA);
-                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setTextSize(TypedValue.COMPLEX_UNIT_PX, 60);
+                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setTextColor(Color.WHITE);
+                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setTextSize(TypedValue.COMPLEX_UNIT_PX, 70);
                     board[ticTacToeGame.move.x][ticTacToeGame.move.y].setEnabled(false);
                     if(ticTacToeGame.checkBoard()) {
                         displayOutome();
