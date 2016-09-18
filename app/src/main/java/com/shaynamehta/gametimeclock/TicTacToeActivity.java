@@ -1,15 +1,16 @@
 package com.shaynamehta.gametimeclock;
 
-import java.util.Random;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class TicTacToeActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     Button board[][];
     TextView textView;
     TicTacToeGame ticTacToeGame;
@@ -18,6 +19,7 @@ public class TicTacToeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //setBackgroundColor(Color.BLUE);
 
         board = new Button[3][3];
         board[0][0] = (Button) findViewById(R.id.tictactoe1);
@@ -29,9 +31,12 @@ public class TicTacToeActivity extends AppCompatActivity {
         board[0][2] = (Button) findViewById(R.id.tictactoe7);
         board[1][2] = (Button) findViewById(R.id.tictactoe8);
         board[2][2] = (Button) findViewById(R.id.tictactoe9);
+        //board.setBackgroundColor(Color.WHITE);
 
         textView = (TextView) findViewById(R.id.gameInfo);
         textView.setText("Click a tile to start.");
+        textView.setTextColor(Color.WHITE);
+
 
         for(int i = 0; i < 3; ++i) {
             for(int j = 0; j < 3; ++j) {
@@ -58,11 +63,15 @@ public class TicTacToeActivity extends AppCompatActivity {
         public void onClick(View view) {
             if (board[x][y].isEnabled()) {
                 board[x][y].setEnabled(false);
-                board[x][y].setText("O");
+                board[x][y].setText("X");
+                board[x][y].setTextColor(Color.BLUE);
+                board[x][y].setTextSize(TypedValue.COMPLEX_UNIT_PX, 60);
                 ticTacToeGame.c[x][y] = 1;
                 if (!ticTacToeGame.checkBoard()) {
                     ticTacToeGame.makeMove();
-                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setText("X");
+                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setText("O");
+                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setTextColor(Color.MAGENTA);
+                    board[ticTacToeGame.move.x][ticTacToeGame.move.y].setTextSize(TypedValue.COMPLEX_UNIT_PX, 60);
                     board[ticTacToeGame.move.x][ticTacToeGame.move.y].setEnabled(false);
                     if(ticTacToeGame.checkBoard()) {
                         displayOutome();
@@ -91,7 +100,7 @@ public class TicTacToeActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_tic_tac_toe, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
@@ -109,4 +118,5 @@ public class TicTacToeActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }
