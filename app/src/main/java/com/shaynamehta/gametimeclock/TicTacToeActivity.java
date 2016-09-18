@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutCompat;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -117,6 +118,14 @@ public class TicTacToeActivity extends AppCompatActivity {
             }
             ringtoneSound.stop();
             ringtoneSound = null;
+
+            Handler fhandler = new Handler();
+            fhandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    finishAffinity();
+                }
+            }, 1000);
         }
     }
 
