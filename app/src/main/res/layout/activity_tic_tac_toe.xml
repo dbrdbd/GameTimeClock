@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#00274c">
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/board"
         android:gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginTop="50dp">
 
         <TableRow
             android:layout_width="wrap_content"
@@ -114,8 +111,8 @@
             android:layout_height="match_parent"></TableRow>
 
         <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -123,13 +120,9 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Medium Text"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="0dp"
-                android:textSize="24sp"
                 android:id="@+id/gameInfo"
                 android:layout_column="1"
-                android:gravity="center_horizontal"
-                android:maxWidth="120dp"/>
+                android:gravity="center_horizontal" />
         </TableRow>
     </TableLayout>
 
