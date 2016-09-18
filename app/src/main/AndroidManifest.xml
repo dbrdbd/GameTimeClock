@@ -16,10 +16,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TIcTacToeActivity"
-            android:label="@string/title_activity_tic_tac_toe" >
-        </activity>
-        <activity
             android:name=".TicTacToeActivity"
             android:label="@string/title_activity_tic_tac_toe" >
         </activity>
