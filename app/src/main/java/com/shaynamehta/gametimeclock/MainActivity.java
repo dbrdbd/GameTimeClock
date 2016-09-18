@@ -28,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-   //     alarmCheckThread = new AlarmCheckThread(getApplicationContext());
-   //     alarmCheckThread.start();
     }
 
     // spawns new thread to wait unil alarm
@@ -70,16 +67,4 @@ public class MainActivity extends AppCompatActivity {
             }
         }, timeDifference);
     }
-
-
-//        SaveButton = (Button) findViewById(R.id.addbutton);
-//
-//        SaveButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//                /*DialogFragment newFragment = new TimePickerFragment();
-//                newFragment.show(getSupportFragmentManager(), "timePicker");*/
-
-        //});
-
-
 }
