@@ -18,19 +18,22 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:text=""
-                android:id="@+id/tictactoe1" />
+                android:id="@+id/tictactoe1"
+                android:backgroundTint="#FF4081" />
 
             <Button
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:text=""
-                android:id="@+id/tictactoe2" />
+                android:id="@+id/tictactoe2"
+                android:backgroundTint="#FF4081" />
 
             <Button
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:text=""
-                android:id="@+id/tictactoe3" />
+                android:id="@+id/tictactoe3"
+                android:backgroundTint="#FF4081" />
         </TableRow>
 
         <TableRow
@@ -43,19 +46,22 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:text=""
-                android:id="@+id/tictactoe4" />
+                android:id="@+id/tictactoe4"
+                android:backgroundTint="#FF4081" />
 
             <Button
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:text=""
-                android:id="@+id/tictactoe5" />
+                android:id="@+id/tictactoe5"
+                android:backgroundTint="#FF4081" />
 
             <Button
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:text=""
-                android:id="@+id/tictactoe6" />
+                android:id="@+id/tictactoe6"
+                android:backgroundTint="#FF4081" />
         </TableRow>
 
         <TableRow
@@ -67,19 +73,22 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:text=""
-                android:id="@+id/tictactoe7" />
+                android:id="@+id/tictactoe7"
+                android:backgroundTint="#FF4081" />
 
             <Button
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:text=""
-                android:id="@+id/tictactoe8" />
+                android:id="@+id/tictactoe8"
+                android:backgroundTint="#FF4081" />
 
             <Button
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:text=""
-                android:id="@+id/tictactoe9" />
+                android:id="@+id/tictactoe9"
+                android:backgroundTint="#FF4081" />
         </TableRow>
 
         <TableRow

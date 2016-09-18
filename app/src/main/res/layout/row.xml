@@ -9,15 +9,20 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:text="Hello World" />
+        android:text="Hello World"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="left" />
 
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:id="@+id/switch1"
+        android:checked="false"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="15dp"
         android:layout_gravity="right"
-        android:checked="false" />
+        android:layout_marginTop="-20dp" />
 
 
 </LinearLayout>

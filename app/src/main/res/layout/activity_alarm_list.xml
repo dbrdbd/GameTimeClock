@@ -14,14 +14,18 @@ android:weightSum="1">
         android:layout_height="wrap_content"
         android:text="New Alarm"
         android:id="@+id/button"
-        android:layout_gravity="right|bottom" />
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#FF4081"
+        android:textColor="#FFFFFF" />
 </FrameLayout>
 
 <ListView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/alarmListView"
-    />
+    android:layout_marginTop="10dp" />
 
 
 
